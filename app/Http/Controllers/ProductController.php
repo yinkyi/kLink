@@ -143,7 +143,7 @@ class ProductController extends MainController
     }
     public function uploadImage($req)
     { 
-        $path = "/"."storage/";         
+        $path = env("APP_URL")."/"."storage/";         
         $file_name = $req->file('image')->getClientOriginalName();
         $file = $req->file('image')->store("public");
         $file = explode("/",$file);
